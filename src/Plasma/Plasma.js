@@ -59,7 +59,7 @@ export default class Plasma {
             if (window.location.host == "localhost:8080"){
                 return PLASMA.routeManager.path(routeName, params)
             }else{
-                return "USS-Valkyrie-LCARS"+ PLASMA.routeManager.path(routeName, params)
+                return "https://romualdlewandoski.github.io/USS-Valkyrie-LCARS"+ PLASMA.routeManager.path(routeName, params)
             }
         })
 

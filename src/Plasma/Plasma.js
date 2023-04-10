@@ -56,7 +56,11 @@ export default class Plasma {
             return PLASMA.routeManager.getRoutesData()
         })
         Twig.extendFunction("path", function (routeName , params = null) {
-            return PLASMA.routeManager.path(routeName, params)
+            if (window.location.host == "localhost:8080"){
+                return PLASMA.routeManager.path(routeName, params)
+            }else{
+                return "USS-Valkyrie-LCARS"+ PLASMA.routeManager.path(routeName, params)
+            }
         })
 
         this.routeManager.vRouter.check()

@@ -7,9 +7,7 @@ export default class AppComponent extends AbstractComponent {
         super();
 
         this.setData({
-            top: new TopComponent().render(),/*
-            leftbar: new LeftBarComponent().render(),
-            navbar: new NavBarComponent().render()*/
+            top: new TopComponent().render(),
         })
         this.render()
         this.script()

@@ -20,6 +20,7 @@
     "sweetalert2": "^11.4.26",
     "twig": "^1.15.4",
     "twig-loader": "^0.5.5",
+    "typo-js": "^1.2.2",
     "vanilla-router": "^1.2.8"
   },
   "devDependencies": {

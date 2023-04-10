@@ -2,11 +2,15 @@ import Logger from "./Logger";
 
 var fetch = require('node-fetch')
 
-async function get(url) {
+async function get(url, isJson = true) {
     let ret
     let startTime = Date.now()
     await fetch(url).then((res) => {
-        ret = res.json();
+        if (isJson){
+            ret = res.json();
+        }else{
+            ret = res.text();
+        }
         let endTime = Date.now()
         if (PLASMA.debug != null) {
             PLASMA.debug.addAjaxRequest(url, "get", startTime, endTime, 200)
@@ -21,7 +25,7 @@ async function get(url) {
     return ret
 }
 
-async function post(url, data) {
+async function post(url, data, isJson = true) {
     let ret
     let startTime = Date.now()
     const params = new URLSearchParams();
@@ -32,7 +36,11 @@ async function post(url, data) {
         method: 'POST',
         body: params,
     }).then((res) => {
-        ret = res.json()
+        if(isJson){
+            ret = res.json()
+        }else{
+            ret = res.text()
+        }
         let endTime = Date.now()
         if (PLASMA.debug != null) {
             PLASMA.debug.addAjaxRequest(url, "post", startTime, endTime, 200)

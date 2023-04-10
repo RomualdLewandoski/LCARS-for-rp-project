@@ -1,8 +1,8 @@
 import AbstractController from "../Plasma/Abstract/AbstractController";
 import AppComponent from "../component/AppComponent";
-import WelcomeComponent from "../component/WelcomeComponent";
+import StellaComponent from "../component/StellaComponent";
 
-export default class PlasmaController extends AbstractController {
+export default class StellaController extends AbstractController {
 
     constructor(name, isApp, core) {
         super(name, isApp, core);
@@ -11,7 +11,7 @@ export default class PlasmaController extends AbstractController {
     index() {
         new AppComponent();
         this.clearDashboard()
-        new WelcomeComponent();
+        new StellaComponent();
 
     }
 

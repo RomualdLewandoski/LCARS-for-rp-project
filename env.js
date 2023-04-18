@@ -1,1 +1,1 @@
-window.ENV = "dev"
+window.ENV = "prod"
